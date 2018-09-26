@@ -28,12 +28,17 @@ class SongsController < ApplicationController
       redirect_to song_path(@song)
     else
       render :edit
-    end 
+    end
   end
 
   def index
     @songs = Song.all
   end
+
+  def destroy
+   Song.find(params[:id]).destroy
+   redirect_to song_url
+ end
 
   private
 
