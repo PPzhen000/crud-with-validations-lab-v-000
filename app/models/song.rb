@@ -12,9 +12,9 @@ class Song < ActiveRecord::Base
     song.validates :release_year. numerically: {
       less_than_or_equal_to: Date.today.year
     }
-  end 
+  end
 
   def released?
-    released 
+    released
   end 
 end
