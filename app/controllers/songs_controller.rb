@@ -18,7 +18,7 @@ class SongsController < ApplicationController
       redirect_to song_path(@song)
     else
       render :new
-    end 
+    end
   end
 
   def update
@@ -28,5 +28,10 @@ class SongsController < ApplicationController
   def index
     @songs = Song.all
   end
+
+  private
+
+  def song_params
+    params.permit(:title, :released, :release_year, :artist_name, :genre)
 
 end
